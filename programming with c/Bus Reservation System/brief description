@@ -1,0 +1,21 @@
+Bus reservation system
+
+features: 
+	
+	user side :
+		1) user can see the available trips
+		2) Choose a trip to book
+		3) Cancel a booked trip
+	
+	admin side:
+		1) can add and remove trips
+		2) See the number of booked seats on any trip
+
+
+valid credentials
+
+user id: 1
+user password : 11
+
+admin id: 9
+admin password: 99
