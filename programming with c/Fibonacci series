@@ -1,0 +1,39 @@
+/*
+function prints the first n integers in fibonacci series
+parameters:
+int n -> number of integers to print
+*/
+void seriesPrinter(int n)
+{
+	if(n<0)
+  {
+		printf("%d is an invalid number. Please input a positive number" , n);
+		return ;
+	}
+
+	int first = 0 , second = 1 , temp;
+
+	switch(n)
+  {
+		case 0:
+			return ;
+    
+		case 1:
+			printf("%d" , first);
+			return ;
+    
+		case 2:
+			printf("%d %d" , first , second);
+			return;
+    
+		default :
+			printf("%d %d " , first , second);
+			for(int i=2 ; i<n ; i++)
+      {
+				temp = first + second ;
+				printf("%d " , temp) ;
+				first = second ;
+				second = temp ;
+			} 
+	}  
+}
