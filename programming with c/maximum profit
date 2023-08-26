@@ -1,0 +1,36 @@
+/*
+* Problem: Given an array of ticket prices what is the maximum profit that can be gained by buying and then selling a ticket once?
+* Parameters:
+* int n -> size of array
+* int* ptr -> array of ticket prices
+* return -> max profit
+*/
+int maxProfit(int n , int *ptr)
+{
+	int arr[n-1];
+	arr[n-2] = ptr[n-1] ;
+	for(int i=n-3 ; i>-1 ; --i)
+	{
+		//arr[i] = max(arr[i+1] , ptr[i+1]);
+		if(arr[i+1] > ptr[i+1])
+    {
+      arr[i] = arr[i+1] ;
+    }
+    else
+    {
+     arr[i] = ptr[i+1] ;
+	  }
+  }
+  
+	int mxm = 0 ;
+	for(int i=0 ; i<n-1 ; i++)
+	{
+		int profit = arr[i] - ptr[i] ;
+		if(profit > mxm)
+    {
+			mxm = profit ;
+    }
+	}
+
+	return mxm ;
+}
