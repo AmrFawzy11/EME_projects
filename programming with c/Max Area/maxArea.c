@@ -1,4 +1,5 @@
-int mnm(int a , int b){
+int mnm(int a , int b)
+{
 	if(a<b)
 	{
 	  return a ;
@@ -6,7 +7,8 @@ int mnm(int a , int b){
 	return b ;
 }
 
-int maxArea(int len , int* arr){
+int maxArea(int len , int* arr)
+{
 	int mxmArea = len * mnm(arr[0], arr[len-1]) , area = 0;
 	int i=0 , j= len-1 ;
  	while(i<j)
