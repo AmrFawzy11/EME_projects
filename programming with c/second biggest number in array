@@ -1,0 +1,55 @@
+/*
+* function prints the second biggest number in an array 
+* Parameters :
+* int n -> size of array
+* int *arr -> array of integers
+*/
+
+/* First way using compare sort */
+int cmp(const int* a , const int* b)
+{
+	return *a - *b ;
+}
+
+void max2(int n , int *arr)
+{
+	qsort(arr , n ,sizeof(int) , cmp);
+  
+	for(int i=0 ; i<n ;i++)
+  {
+		printf("%d " , arr[i]) ;
+	}
+  
+	for(int i=n-2 ; i>-1 ; --i)
+  {
+		if(arr[i] < arr[n-1])
+    {
+			printf("\n%d" , arr[i]);
+			break;
+    }
+	}
+}
+
+/* Second way 2 variables to hold value of biggest and 2nd biggest elements */
+void max2(int n , int *arr){
+	int mxm = arr[0] , mxm2 = INT_MIN ;
+
+	for(int i=1 ; i<n ; i++)
+  {
+		if(arr[i] > mxm)
+    {
+			mxm2 = mxm ;
+			mxm = arr[i] ;
+		}
+		else if(arr[i] > mxm2 && arr[i] != mxm)
+    {
+			mxm2 = arr[i] ;
+		}
+	}
+
+	for(int i=0 ; i<n ;i++){
+			printf("%d " , arr[i]) ;
+		}
+	if(mxm2 != mxm)
+		printf("\n%d" , mxm2);
+}
