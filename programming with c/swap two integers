@@ -1,0 +1,27 @@
+/* First way using temp variable */
+void swap(int *x , int *y){
+	int temp = *x ;
+	*x = *y ;
+	*y = temp ;
+}
+
+/* Second way using adition and multiplication */
+void swap(int *x , int* y ){
+	*x = *x + *y ;
+	*y = *x - *y ;
+	*x = *x - *y ;
+}
+
+/* Third way using multiplication and divison operations */
+void swap(int *x ,int *y){
+	*x = *x * *y ;
+	*y = *x / *y ;
+	*x = *x / *y ;
+}
+
+/* Fourth way using Xor bitwise operations */
+void swap(int *x , int*y) {
+	*x = *x ^ *y ;
+	*y = *x ^ *y ;
+	*x = *x ^ *y ;
+}
